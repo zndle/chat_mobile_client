@@ -1,14 +1,14 @@
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 
-import 'global.dart';
+import 'router/application.dart';
 import 'router/routes.dart';
 
 class MyApp extends StatelessWidget {
   MyApp() {
     final router = FluroRouter();
     Routes.configRouter(router);
-    Globals.router = router;
+    Application.router = router;
   }
 
   // This widget is the root of your application.
@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      onGenerateRoute: Globals.router.generator,
+      onGenerateRoute: Application.router.generator,
     );
   }
 }

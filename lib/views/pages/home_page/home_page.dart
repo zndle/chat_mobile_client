@@ -1,6 +1,6 @@
-import 'package:chat_0818/global.dart';
-import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
+
+import './components/login_form.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -17,16 +17,12 @@ class _HomePageState extends State<HomePage> {
         title: Text('HomePage'),
       ),
       body: Container(
+        padding: EdgeInsets.only(left: 40, right: 40),
         width: double.infinity,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            TextButton(
-                onPressed: () => {
-                      Globals.router.navigateTo(context, '/chat',
-                          transition: TransitionType.fadeIn)
-                    },
-                child: Text('登录'))
+            LoginForm(),
           ],
         ),
       ),
