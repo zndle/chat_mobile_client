@@ -1,14 +1,14 @@
 import 'package:chat_0818/plugins/web_socket_channel.dart';
 import 'package:flutter/material.dart';
 
-class Body extends StatefulWidget {
-  const Body({Key? key}) : super(key: key);
+class BodySection extends StatefulWidget {
+  const BodySection({Key? key}) : super(key: key);
 
   @override
-  _BodyState createState() => _BodyState();
+  _BodySectionState createState() => _BodySectionState();
 }
 
-class _BodyState extends State<Body> {
+class _BodySectionState extends State<BodySection> {
   @override
   Widget build(BuildContext context) {
     return Column(
