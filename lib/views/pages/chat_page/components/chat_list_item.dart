@@ -1,4 +1,5 @@
 import 'package:chat_0818/router/application.dart';
+import 'package:fluro/fluro.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -13,26 +14,30 @@ class ChatListItem extends StatefulWidget {
 class _ChatListItemState extends State<ChatListItem> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(15.0),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.all(Radius.circular(15.0)),
-        color: Color(0xfff9f9f9),
-        border: Border.all(
-          color: Color(0xffffffff),
-        ),
-        boxShadow: <BoxShadow>[
-          BoxShadow(
-            color: Color.fromRGBO(232, 225, 244, 0.25),
-            offset: Offset(0, 10),
-            blurRadius: 30,
+    return GestureDetector(
+      onTap: () {
+        Application.router.navigateTo(
+          context,
+          '/chat/${widget.topic}',
+          transition: TransitionType.fadeIn,
+        );
+      },
+      child: Container(
+        padding: EdgeInsets.all(15.0),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.all(Radius.circular(15.0)),
+          color: Color(0xfff9f9f9),
+          border: Border.all(
+            color: Color(0xffffffff),
           ),
-        ],
-      ),
-      child: GestureDetector(
-        onTap: () {
-          Application.router.navigateTo(context, '/chat/${widget.topic}');
-        },
+          boxShadow: <BoxShadow>[
+            BoxShadow(
+              color: Color.fromRGBO(232, 225, 244, 0.25),
+              offset: Offset(0, 10),
+              blurRadius: 30,
+            ),
+          ],
+        ),
         child: Row(
           children: [
             ClipRRect(
@@ -49,7 +54,7 @@ class _ChatListItemState extends State<ChatListItem> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Username',
+                    Text('Username${widget.topic}',
                         style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.w500,

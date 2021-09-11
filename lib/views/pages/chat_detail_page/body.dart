@@ -1,6 +1,8 @@
 import 'package:chat_0818/plugins/web_socket_channel.dart';
 import 'package:flutter/material.dart';
 
+import 'message_input.dart';
+
 class BodySection extends StatefulWidget {
   const BodySection({Key? key}) : super(key: key);
 
@@ -13,16 +15,8 @@ class _BodySectionState extends State<BodySection> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        ElevatedButton(
-          onPressed: () {
-            WebSocketPlugin.connect();
-          },
-          child: Text('连接'),
-        ),
-        ElevatedButton(
-          onPressed: () => sendMessage(),
-          child: Text('发送'),
-        ),
+        Expanded(child: Text('Message, list')),
+        MessageInput(),
       ],
     );
   }

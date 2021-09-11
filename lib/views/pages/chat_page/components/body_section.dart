@@ -27,7 +27,7 @@ class _BodySectionState extends State<BodySection> {
           separatorBuilder: (ctx, idx) => SizedBox(
             height: 15,
           ),
-          itemCount: 20,
+          itemCount: 500,
         ),
         Container(
           child: Center(
